@@ -1,0 +1,41 @@
+---
+const { slug, title, precio, imagen, marca, modelo } = Astro.props;
+---
+
+<article class="group cursor-pointer h-auto">
+  <a href={`/producto/${slug}`}>
+    <div class="flex flex-col items-center rounded-xl h-full">
+      <div
+        class="flex flex-col justify-center items-center text-center w-full px-8 bg-white rounded-t-xl border-b border-gray-200 flex-grow"
+      >
+        <h3
+          class="pt-2 text-lg font-semibold text-gray-800 text-center leading-tight"
+        >
+          {title}
+        </h3>
+        <span class="text-gray-800 font-bold text-lg mb-2"
+          >{`RD$ ${precio}`}</span
+        >
+      </div>
+      <div class="bg-white w-full flex justify-center px-4">
+        <img
+          src={imagen}
+          alt={title}
+          class="w-60 h-40 object-contain mb-4 group-hover:scale-130 transition-transform duration-500 z-20"
+        />
+      </div>
+
+      <div
+        class="flex w-full justify-center text-center bg-white py-4 rounded-b-xl border-t border-gray-200"
+      >
+        <p class="w-full text-sm text-gray-500 border-r border-gray-300 py-2">
+          Marca: <span class="font-medium text-gray-900">{marca}</span>
+        </p>
+
+        <p class="w-full text-sm text-gray-500 py-2">
+          Modelo: <span class="font-medium text-gray-900">{modelo}</span>
+        </p>
+      </div>
+    </div>
+  </a>
+</article>
