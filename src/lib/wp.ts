@@ -1,5 +1,3 @@
-import _slug_ from "../pages/post/[slug].astro";
-
 const domain= import.meta.env.WP_DOMAIN
 const apiURL = `${domain}/wp-json/wp/v2`
 
